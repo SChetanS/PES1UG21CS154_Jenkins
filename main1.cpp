@@ -1,29 +1,10 @@
-pipeline {
-  agent any
-  stages {
-    stage('Build') {
-          steps {
-            build 'PES1UG21CS154-1'
-            sh 'g++ main1.cpp -o output'
-            }
-        }
+#include <iostream>
+using namespace std;
 
-    stage('Test') {
-      steps {
-        sh './output'
-      }
-    }
-
-    stage('Deploy') {
-      steps {
-        echo 'deploy'
-      }
-    }  
-  }
-          
-  post{
-    failure{
-      error 'Pipeline failed'
-    }
-  }
+int main(void) {
+  cout << "PES1UG21CS154\n";
+  cout << "Hello, Jenkins\n";
+  cout << "Executing a pipeline!\n";
+  cout << "I have successfully built and run\n";
+  return 0;
 }
